@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow: hidden; 
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 10; 
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+
+}
+
+/* Navigation */
+.nav ul {
+    display: flex;
+    float: right;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.nav a:hover {
+    color: #ff7f50;
+}
+
+/* Main content */
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 100px;
+}
+
+/* Clock */
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 650px;
+    height: 60px;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
+
+/* stopwatch */
+#stopwatch-section {
+    position: absolute; 
+    top: 40%;
+    left: 50%; 
+    transform: translate(-50%, -40%); 
+}
+
+#timer{
+    font-family: 'Poppins', sans-serif;
+    font-size:5em;
+    font-weight:100;
+  }
+  
+  button{
+    display: inline-block; 
+    background: linear-gradient(90deg, #ff7f50, #ff5722); 
+    color: white; 
+    font-size: 1.25rem; 
+    padding: 15px 30px; 
+    border: none; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    text-align: center; 
+    cursor: pointer; 
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+
+  button:hover{
+    background: linear-gradient(90deg, #ff5722, #ff7f50); 
+    transform: scale(1.05); 
+  }
+  
+  /* pomodoro */
+
+
+
+  /* hide nav  */
+  @media (max-height: 300px) {
+    .header {
+        display: none; 
+    }
+}

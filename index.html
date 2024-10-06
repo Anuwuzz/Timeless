@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <span>TimeLess</span>
+        </div>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="#" id="clock-link">clock</a></li>
+                <li><a href="#" id="stopwatch-link">stopwatch</a></li>
+                <li><a href="#" id="pomodoro-link">pomodoro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Clock Section -->
+        <div class="main-content" id="clock-section">
+            <div class="clock"></div>
+        </div>
+
+        <!-- Stopwatch Section -->
+        <div class="main-content" id="stopwatch-section" style="display:none;">
+            <div id="timer"></div>
+            <button id="toggle">Start</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <!-- Pomodoro Section -->
+        <div class="main-content" id="pomodoro-section" style="display:none;">
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.min.js"></script>
+</body>
+</html>
