@@ -109,6 +109,77 @@ function Stopwatch(elem) {
     }
   };
 }
+
+// pomodoro//
+
+let breakMinutes = 5;
+let sessionMinutes = 25;
+let interval;
+
+function updateDisplay() {
+    document.getElementById('break-minutes').textContent = breakMinutes.toString().padStart(2, '0');
+    document.getElementById('break-seconds').textContent = "00";
+    document.getElementById('session-minutes').textContent = sessionMinutes.toString().padStart(2, '0');
+    document.getElementById('session-seconds').textContent = "00";
+}
+
+function increaseBreak() {
+    breakMinutes++;
+    updateDisplay();
+}
+
+function decreaseBreak() {
+    if (breakMinutes > 1) {
+        breakMinutes--;
+    }
+    updateDisplay();
+}
+
+function increaseSession() {
+    sessionMinutes++;
+    updateDisplay();
+}
+
+function decreaseSession() {
+    if (sessionMinutes > 1) {
+        sessionMinutes--;
+    }
+    updateDisplay();
+}
+
+function startTimer() {
+    clearInterval(interval);
+    let sessionTime = sessionMinutes * 60;
+    interval = setInterval(() => {
+        let minutes = Math.floor(sessionTime / 60);
+        let seconds = sessionTime % 60;
+        document.getElementById('session-minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('session-seconds').textContent = seconds.toString().padStart(2, '0');
+        if (sessionTime <= 0) {
+            clearInterval(interval);
+            playMusic();
+        }
+        sessionTime--;
+    }, 1000);
+}
+
+function stopTimer() {
+    clearInterval(interval);
+}
+
+function resetTimer() {
+    stopTimer();
+    sessionMinutes = 25;
+    breakMinutes = 5;
+    updateDisplay();
+}
+
+function playMusic() {
+    let audio = new Audio("sound/alarm.mp3");
+    audio.play();
+}
+
+updateDisplay();
   
 // links //
 function showSection(sectionId) {
